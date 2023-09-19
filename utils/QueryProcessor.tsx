@@ -25,35 +25,66 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  else if (query.match("Which of the following numbers is the largest: 78, 20, 70?")) {
-    return (
-      "78 is the largest"
-    );
-  }
+  // else if (query.match("Which of the following numbers is the largest: 78, 20, 70?")) {
+  //   return (
+  //     "78 is the largest"
+  //   );
+  // }
 
-  else if (query.match("Which of the following numbers is the largest: 7, 41, 69?")) {
-    return (
-      "69 is the largest"
-    );
-  }
+  // else if (query.match("Which of the following numbers is the largest: 7, 41, 69?")) {
+  //   return (
+  //     "69 is the largest"
+  //   );
+  // }
 
-  else if (query.match("Which of the following numbers is the largest: 51, 29, 86?")) {
-    return (
-      "86 is the largest"
-    );
-  }
+  // else if (query.match("Which of the following numbers is the largest: 51, 29, 86?")) {
+  //   return (
+  //     "86 is the largest"
+  //   );
+  // }
 
-  else if (query.match("What is 70 multiplied by 82?")) {
-    return (
-      "5740"
-    );
-  }
+  // else if (query.match("What is 70 multiplied by 82?")) {
+  //   return (
+  //     "5740"
+  //   );
+  // }
 
   else if (query.match("What is 26 minus 31?")) {
     return (
       "-5"
     );
   }
+
+  else if (/What is (\d+) multiplied by (\d+)\?/.test(query)) {
+    // Extract numbers from the question
+    const matches = query.match(/What is (\d+) multiplied by (\d+)\?/);
+    
+    if (matches) {
+        const num1: number = parseInt(matches[1], 10);
+        const num2: number = parseInt(matches[2], 10);
+        
+        // Multiply the numbers
+        const result: number = num1 * num2;
+        
+        return result.toString();
+    }
+}
+
+    else if (/What is (\d+) minus (\d+)\?/.test(query)) {
+      // Extract numbers from the question
+      const matches = query.match(/What is (\d+) mimus (\d+)\?/);
+      
+      if (matches) {
+          const num1: number = parseInt(matches[1], 10);
+          const num2: number = parseInt(matches[2], 10);
+          
+          // Multiply the numbers
+          const result: number = num1 - num2;
+          
+          return result.toString();
+      }
+    }
+
   
 
   else if (/Which of the following numbers is the largest: ([\d, ]+)?/.test(query)) {
