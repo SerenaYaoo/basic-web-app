@@ -60,6 +60,24 @@ describe("QueryProcessor", () => {
           ));
     });
 
+
+    test('should return biggest number 86 description', () => {
+        const query = "Which of the following numbers is the largest: 51, 29, 86?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "86 is the largest"
+          ));
+    });
+
+
+    test('should return biggest number 5740 description', () => {
+        const query = "What is 70 multiplied by 82?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "5740"
+          ));
+    });
+
     // test('should return name description', () => {
     //     const query = "What is your name?";
     //     const response: string = QueryProcessor(query);

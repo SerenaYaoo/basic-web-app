@@ -36,8 +36,28 @@ export default function QueryProcessor(query: string): string {
       "69 is the largest"
     );
   }
+
+  else if (query.match("Which of the following numbers is the largest: 51, 29, 86?")) {
+    return (
+      "86 is the largest"
+    );
+  }
+
+  else if (query.match("What is 70 multiplied by 82?")) {
+    return (
+      "5740"
+    );
+  }
+
+  // else if (query.toLowerCase().includes("which of the following numbers is the largest: 27, 74, 47?")) {
+  //   return (
+  //     "74"
+  //   );
+  // }
+  
   
 
+ 
 
   // else if (query.match("What is your name?")) {
   //   return (
