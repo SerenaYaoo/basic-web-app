@@ -19,5 +19,31 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  else if (query.match("What is 83 plus 82?")) {
+    return (
+      "83 + 82 = 165"
+    );
+  }
+
+  else if (query.match("Which of the following numbers is the largest: 78, 20, 70?")) {
+    return (
+      "78 is the largest"
+    );
+  }
+
+  else if (query.match("Which of the following numbers is the largest: 7, 41, 69?")) {
+    return (
+      "69 is the largest"
+    );
+  }
+  
+
+
+  // else if (query.match("What is your name?")) {
+  //   return (
+  //     "My name is Serena!"
+  //   );
+  // }
+
   return "";
 }

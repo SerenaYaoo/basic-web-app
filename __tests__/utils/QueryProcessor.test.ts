@@ -34,4 +34,39 @@ describe("QueryProcessor", () => {
             "My name is Serena"
           ));
     });
+
+    test('should return biggest number 78 description', () => {
+        const query = "Which of the following numbers is the largest: 78, 20, 70?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "78 is the largest"
+          ));
+    });
+
+
+    test('should return biggest number 69 description', () => {
+        const query = "Which of the following numbers is the largest: 7, 41, 69";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "69 is the largest"
+          ));
+    });
+
+    test('should return addition description', () => {
+        const query = "What is 83 plus 82";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "83 + 82 = 165"
+          ));
+    });
+
+    // test('should return name description', () => {
+    //     const query = "What is your name?";
+    //     const response: string = QueryProcessor(query);
+    //     expect(response).toBe((
+    //         "My name is Serena!"
+    //       ));
+    // });
+
+
 });
