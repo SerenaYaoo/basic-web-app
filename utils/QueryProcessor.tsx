@@ -56,6 +56,17 @@ export default function QueryProcessor(query: string): string {
   }
   
 
+  else if (/Which of the following numbers is the largest: ([\d, ]+)?/.test(query)) {
+    // Extract numbers from the question
+    const numbers: number[] = query.match(/(\d+)/g)!.map(Number);
+    
+    // Find the largest number
+    const largest: number = Math.max(...numbers);
+    
+    return `${largest} is the largest`;
+}
+
+
   // else if (query.toLowerCase().includes("which of the following numbers is the largest: 27, 74, 47?")) {
   //   return (
   //     "74"
