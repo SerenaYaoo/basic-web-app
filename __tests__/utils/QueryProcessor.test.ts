@@ -78,6 +78,16 @@ describe("QueryProcessor", () => {
           ));
     });
 
+    test('should return subtraction -5 description', () => {
+        const query = "What is 26 minus 31?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "-5"
+          ));
+    });
+
+    	
+
     // test('should return name description', () => {
     //     const query = "What is your name?";
     //     const response: string = QueryProcessor(query);

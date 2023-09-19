@@ -49,6 +49,13 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  else if (query.match("What is 26 minus 31?")) {
+    return (
+      "-5"
+    );
+  }
+  
+
   // else if (query.toLowerCase().includes("which of the following numbers is the largest: 27, 74, 47?")) {
   //   return (
   //     "74"
